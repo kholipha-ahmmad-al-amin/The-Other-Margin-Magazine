@@ -216,7 +216,7 @@ img{display:block;max-width:100%}
 a{color:inherit}
 
 /* DESK / PAGE SHELL */
-.desk{max-width:920px;margin:0 auto;padding:24px 16px 80px}
+.desk{margin:0 auto;padding:24px 0 80px;box-sizing:border-box}
 .sheet{
   width:840px;
   min-width:840px;
@@ -618,7 +618,7 @@ small,.small{font-size:12.5px;line-height:1.5;color:var(--ink-soft)}
 .topnav .brand em{color:var(--red);font-style:normal}
 
 /* RESPONSIVE PAGE SCALING & SPREAD ARCHITECTURE */
-#scaleWrap{overflow:hidden}
+#scaleWrap{overflow:visible}
 
 /* VIEW TOGGLE & PRINT TOOLBAR */
 .tb-view-toggle{display:inline-flex;align-items:center;border:1px solid var(--ink);background:var(--paper-deep);margin-right:2px}
@@ -661,14 +661,26 @@ small,.small{font-size:12.5px;line-height:1.5;color:var(--ink-soft)}
 @media (max-width:960px){.side-nav-btn{display:none !important}}
 
 /* SPREAD ROW & STAGE GEOMETRY */
-.desk{width:100%;margin:0 auto;padding:24px 16px 80px;box-sizing:border-box}
+.desk{width:100%;margin:0 auto;box-sizing:border-box}
+.desk.mode-spread{
+  width:100% !important;
+  max-width:100% !important;
+  padding:24px 0 80px !important;
+  overflow:visible !important;
+}
+.desk.mode-single{
+  width:100% !important;
+  max-width:920px !important;
+  margin:0 auto !important;
+  padding:24px 16px 80px !important;
+}
 .spread-row{
   width:100%;
   display:flex;
   justify-content:center;
   align-items:flex-start;
   margin:0 auto 36px;
-  overflow:hidden;
+  overflow:visible !important;
 }
 .spread-stage{
   display:flex;
@@ -678,6 +690,7 @@ small,.small{font-size:12.5px;line-height:1.5;color:var(--ink-soft)}
   align-items:stretch;
   flex-shrink:0;
   transform-origin:top center;
+  position:relative;
 }
 
 /* SPREAD MODE */
@@ -696,19 +709,20 @@ small,.small{font-size:12.5px;line-height:1.5;color:var(--ink-soft)}
   height:1188px;min-height:1188px;max-height:1188px;
   margin:0 !important;
   border-right:1px solid rgba(28,23,18,.35) !important;
-  box-shadow:inset -20px 0 24px -10px rgba(28,23,18,.16) !important;
+  box-shadow:inset -22px 0 26px -10px rgba(28,23,18,.18) !important;
 }
 .desk.mode-spread .spread-stage.pair .sheet:last-child{
   width:840px;min-width:840px;max-width:840px;
   height:1188px;min-height:1188px;max-height:1188px;
   margin:0 !important;
   border-left:none !important;
-  box-shadow:inset 20px 0 24px -10px rgba(28,23,18,.16) !important;
+  box-shadow:inset 22px 0 26px -10px rgba(28,23,18,.18) !important;
 }
 .desk.mode-spread .spread-stage.single .sheet{
   width:840px;min-width:840px;max-width:840px;
   height:1188px;min-height:1188px;max-height:1188px;
   margin:0 !important;
+  box-shadow:none !important;
 }
 
 /* SINGLE MODE */
@@ -2851,18 +2865,18 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
   function fit(){
     var winW = window.innerWidth;
     if (isSpread) {
-      var availW = Math.max(320, winW - 36);
+      var sidePadding = winW >= 1840 ? 40 : (winW >= 1000 ? 84 : 16);
+      var availW = Math.max(320, winW - (sidePadding * 2));
+      var spreadScale = Math.min(1, availW / 1680);
       spreadGroups.forEach(function(g){
         var row = document.getElementById(g.id);
         if (!row) return;
         var stage = row.firstElementChild;
         if (!stage) return;
-        var baseW = g.sheets.length === 2 ? 1680 : 840;
-        var scale = Math.min(1, availW / baseW);
-        stage.style.transform = 'scale(' + scale + ')';
+        stage.style.transform = 'scale(' + spreadScale + ')';
         stage.style.transformOrigin = 'top center';
-        row.style.height = Math.round(BASE_H * scale) + 'px';
-        row.style.marginBottom = Math.max(16, Math.round(36 * scale)) + 'px';
+        row.style.height = Math.round(BASE_H * spreadScale) + 'px';
+        row.style.marginBottom = Math.max(16, Math.round(36 * spreadScale)) + 'px';
 
         g.sheets.forEach(function(s){
           s.style.width = BASE_W + 'px';
