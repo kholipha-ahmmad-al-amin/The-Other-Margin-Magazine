@@ -29,8 +29,9 @@ The Other Margin is a 32-page print-style digital publication. It pairs document
 
 ## Live Deployment
 
-- **Online Magazine**: [the-other-margin-magazine.vercel.app](https://the-other-margin-magazine.vercel.app/)
-- **Promo Kit Surface**: [the-other-margin-magazine.vercel.app/promo-kit.html](https://the-other-margin-magazine.vercel.app/promo-kit.html)
+- **GitHub Pages (Recommended)**: [kholipha-ahmmad-al-amin.me/The-Other-Margin-Magazine/](https://kholipha-ahmmad-al-amin.me/The-Other-Margin-Magazine/)
+- **Netlify Mirror**: [dapper-sunflower-648048.netlify.app](https://dapper-sunflower-648048.netlify.app/)
+- **Vercel**: [the-other-margin-magazine.vercel.app](https://the-other-margin-magazine.vercel.app/) (Note: May require VPN or custom domain in certain regions)
 
 ## Local Setup
 
