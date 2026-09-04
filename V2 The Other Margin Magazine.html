@@ -774,12 +774,14 @@ small,.small{font-size:12.5px;line-height:1.5;color:var(--ink-soft)}
     width: 210mm !important;
     max-width: none !important;
   }
-  .spread-row, .spread-stage{
+  .spread-row, .spread-stage, .viewport{
     display: contents !important;
     transform: none !important;
     margin: 0 !important;
     padding: 0 !important;
     box-shadow: none !important;
+    border: none !important;
+    height: auto !important;
   }
   .sheet{
     display: block !important;
@@ -800,20 +802,12 @@ small,.small{font-size:12.5px;line-height:1.5;color:var(--ink-soft)}
     position: relative !important;
     background: var(--paper) !important;
   }
+  .sheet:last-of-type, .sheet:last-child{
+    break-after: auto !important;
+    page-break-after: auto !important;
+  }
   .sheet::after, .sheet::before{
     display: none !important;
-  }
-  .viewport{
-    width: 840px !important;
-    height: 1188px !important;
-    min-height: 1188px !important;
-    max-height: 1188px !important;
-    transform-origin: 0 0 !important;
-    transform: scale(0.944882) !important; /* 210mm at 96dpi = 793.7px -> 793.7/840 = 0.944882 */
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
-    overflow: hidden !important;
   }
 }
 
@@ -2919,6 +2913,41 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
         });
       });
     }
+  }
+
+  function preparePrint(){
+    spreadGroups.forEach(function(g){
+      var row = document.getElementById(g.id);
+      if (row) {
+        row.style.height = '';
+        row.style.marginBottom = '';
+      }
+      if (row && row.firstElementChild) {
+        row.firstElementChild.style.transform = '';
+      }
+      g.sheets.forEach(function(s){
+        s.style.width = '';
+        s.style.height = '';
+        s.style.margin = '';
+        var vp = s.querySelector('.viewport');
+        if (vp) vp.style.transform = '';
+      });
+    });
+  }
+
+  window.addEventListener('beforeprint', preparePrint);
+  window.addEventListener('afterprint', fit);
+
+  var printBtn = document.getElementById('printPageBtn');
+  if (printBtn) {
+    printBtn.onclick = null;
+    printBtn.addEventListener('click', function(e){
+      e.preventDefault();
+      preparePrint();
+      setTimeout(function(){
+        window.print();
+      }, 50);
+    });
   }
 
   // Navigation handlers
