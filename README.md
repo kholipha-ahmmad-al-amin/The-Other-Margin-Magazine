@@ -23,13 +23,22 @@ The Other Margin is a 32-page print-style digital publication. It pairs document
 
 ## Deliverables
 
-- **Magazine (Main)**: `index.html` (and `V2 The Other Margin Magazine.html`) - Full 32-page publication with responsive viewport scaling.
+- **Magazine (Main)**: `index.html` (and `V2 The Other Margin Magazine.html`) - Full 32-page publication with physical page aesthetics, spine gutter shadows, and responsive scaling.
+- **Print Edition (PDF)**: `The-Other-Margin-Magazine.pdf` - Complete 32-page publication formatted to ISO A4 standard with zero overflow.
 - **Promo Kit**: `promo-kit.html` (and `V2 The Other Margin Promo Kit.html`) - Coordinated multi-format promotional surfaces including system sheet, A3 poster, square post (1080x1080), portrait post (1080x1350), and vertical story (1080x1920).
 - **Assets**: `other-margin-assets/` - Documentary photographic plates and style contract.
+
+## Reader Features
+
+- **Quick Navigation**: Header dropdown to jump directly to any of the 32 pages.
+- **Keyboard Controls**: Left and Right arrows (or Page Up and Page Down) to turn pages.
+- **Spread View Mode**: Desktop toggle to preview facing pages side by side.
+- **Direct PDF Download**: Dedicated header action to obtain the offline print-ready edition.
 
 ## Live Deployment
 
 - **Live Magazine**: [the-other-margin-magazine.netlify.app](https://the-other-margin-magazine.netlify.app/)
+- **Print PDF Download**: [the-other-margin-magazine.netlify.app/The-Other-Margin-Magazine.pdf](https://the-other-margin-magazine.netlify.app/The-Other-Margin-Magazine.pdf)
 - **Promo Kit Surface**: [the-other-margin-magazine.netlify.app/promo-kit.html](https://the-other-margin-magazine.netlify.app/promo-kit.html)
 - **Vercel Mirror**: [the-other-margin-magazine.vercel.app](https://the-other-margin-magazine.vercel.app/) (Note: May require VPN or custom domain in certain regions)
 

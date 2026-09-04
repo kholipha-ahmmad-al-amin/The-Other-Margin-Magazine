@@ -57,17 +57,36 @@ a{color:inherit}
 .sheet{
  width:100%;
  max-width:840px;
- margin:0 auto 28px;
+ margin:0 auto 36px;
  background:
  radial-gradient(circle, rgba(28,23,18,.05) 1px, transparent 1.4px) 0 0/15px 15px,
  var(--paper);
- box-shadow:0 1px 2px rgba(28,23,18,.25),0 14px 40px -18px rgba(28,23,18,.45);
+ box-shadow:
+   0 1px 3px rgba(28,23,18,.12),
+   0 10px 28px -6px rgba(28,23,18,.2),
+   0 24px 52px -12px rgba(28,23,18,.28);
+ border:1px solid rgba(28,23,18,.16);
  position:relative;
  overflow:hidden;
+ box-sizing:border-box;
 }
-.sheet::after{ /* deckle edge hint */
+.sheet::after{ /* inner paper glow and micro deckle */
  content:"";position:absolute;inset:0;pointer-events:none;
- border:1px solid rgba(28,23,18,.06);
+ box-shadow:inset 0 0 45px rgba(235,228,210,.35);
+ border:1px solid rgba(28,23,18,.05);
+ z-index:2;
+}
+/* Left-hand facing page in spread: spine gutter on right */
+.sheet:nth-of-type(even)::before{
+ content:"";position:absolute;top:0;bottom:0;right:0;width:40px;
+ background:linear-gradient(to right, transparent, rgba(28,23,18,.02) 60%, rgba(28,23,18,.07) 88%, rgba(28,23,18,.15) 100%);
+ pointer-events:none;z-index:3;
+}
+/* Right-hand facing page in spread (except cover): spine gutter on left */
+.sheet:nth-of-type(odd):not([data-od-id="p01-cover"])::before{
+ content:"";position:absolute;top:0;bottom:0;left:0;width:40px;
+ background:linear-gradient(to left, transparent, rgba(28,23,18,.02) 60%, rgba(28,23,18,.07) 88%, rgba(28,23,18,.15) 100%);
+ pointer-events:none;z-index:3;
 }
 
 /* page scaling: fixed A4-ratio canvas, scaled down on narrow viewports */
@@ -329,12 +348,102 @@ small,.small{font-size:12.5px;line-height:1.5;color:var(--ink-soft)}
 /* RESPONSIVE PAGE SCALING (JS-assisted) */
 #scaleWrap{overflow:hidden}
 @media print{
- body{background:#fff}
- .topnav{display:none}
- .desk{padding:0;max-width:none}
- .sheet{box-shadow:none;margin:0;page-break-after:always;max-width:none}
- .sheet::after{display:none}
- @page{size:A4;margin:0}
+ @page{size:A4 portrait;margin:0}
+ html, body{
+   background:#fff !important;
+   margin:0 !important;
+   padding:0 !important;
+   -webkit-print-color-adjust:exact !important;
+   print-color-adjust:exact !important;
+ }
+ .reader-toolbar, .topnav{display:none !important}
+ .desk{padding:0 !important;max-width:none !important;width:100% !important;margin:0 !important}
+ .sheet{
+   box-shadow:none !important;
+   margin:0 !important;
+   border:none !important;
+   page-break-after:always !important;
+   page-break-inside:avoid !important;
+   break-after:page !important;
+   max-width:none !important;
+   width:100vw !important;
+   height:100vh !important;
+   box-sizing:border-box !important;
+   overflow:hidden !important;
+ }
+ .sheet::after, .sheet::before{display:none !important}
+ .viewport{width:100% !important;transform:none !important}
+}
+
+
+/* READER TOOLBAR */
+.reader-toolbar{
+  position:sticky;top:0;z-index:1000;
+  background:var(--paper);border-bottom:2px solid var(--ink);
+  padding:10px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;
+  box-shadow:0 2px 10px rgba(28,23,18,.14);
+  font-family:var(--font-mono);
+}
+.tb-left{display:flex;align-items:baseline;gap:8px}
+.tb-logo{font-family:var(--font-display);font-size:19px;letter-spacing:-.01em;color:var(--ink);text-decoration:none}
+.tb-sep{color:var(--rule);font-size:12px}
+.tb-issue{font:10px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute)}
+.tb-center{display:flex;align-items:center;gap:8px}
+.tb-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:6px 12px;background:var(--paper-deep);border:1px solid var(--ink);
+  color:var(--ink);font:10.5px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;
+  cursor:pointer;transition:all .15s ease;
+}
+.tb-btn:hover{background:var(--ink);color:var(--paper)}
+.tb-select-wrap select{
+  padding:6px 10px;background:var(--paper);border:1px solid var(--ink);color:var(--ink);
+  font:10.5px/1.4 var(--font-mono);letter-spacing:.06em;cursor:pointer;max-width:240px;
+}
+.tb-right{display:flex;align-items:center;gap:8px}
+.tb-btn-pdf{background:var(--red);border-color:var(--red);color:#fff;text-decoration:none}
+.tb-btn-pdf:hover{background:var(--red-deep);border-color:var(--red-deep);color:#fff}
+.tb-btn-link{text-decoration:none;color:var(--ink-soft);background:transparent}
+.tb-btn-link:hover{background:var(--ink);color:var(--paper)}
+
+.cover-teasers{display:flex;flex-direction:column;gap:8px;margin:20px 0 16px;border-top:1px solid var(--rule);padding-top:14px}
+.ct-item{font-size:12.5px;line-height:1.4;color:var(--ink-soft)}
+.ct-item b{font:600 9px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-right:6px;display:inline-block;padding:2px 4px;border:1px solid var(--red)}
+.cover-barcode{display:flex;align-items:center}
+
+@media (max-width:900px){
+  .reader-toolbar{padding:8px 12px;flex-wrap:wrap;gap:8px}
+  .tb-issue, .tb-mode-btn{display:none}
+  .tb-select-wrap select{max-width:160px}
+}
+
+/* 2-PAGE SPREAD VIEW MODE (Desktop >= 1200px) */
+@media (min-width: 1200px) {
+  .desk.spread-mode{
+    max-width: 1720px;
+    padding: 36px 32px 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0;
+  }
+  .desk.spread-mode .sheet{
+    max-width: 820px;
+    margin: 0 0 32px 0;
+  }
+  .desk.spread-mode .sheet[data-od-id="p01-cover"]{
+    margin: 0 auto 40px auto;
+    flex-basis: 100%;
+    max-width: 840px;
+  }
+  .desk.spread-mode .sheet:nth-of-type(even){
+    border-right: none;
+    box-shadow: -4px 12px 32px rgba(28,23,18,.16), 0 1px 2px rgba(28,23,18,.2);
+  }
+  .desk.spread-mode .sheet:nth-of-type(odd):not([data-od-id="p01-cover"]){
+    border-left: none;
+    box-shadow: 4px 12px 32px rgba(28,23,18,.16), 0 1px 2px rgba(28,23,18,.2);
+  }
 }
 
 /* focus visibility */
@@ -342,6 +451,38 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 </style>
 </head>
 <body>
+<nav class="reader-toolbar" id="readerToolbar" aria-label="Magazine Controls">
+  <div class="tb-left">
+    <a href="#" class="tb-logo" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">THE OTHER MARGIN</a>
+    <span class="tb-sep">/</span>
+    <span class="tb-issue">Issue 01</span>
+  </div>
+  <div class="tb-center">
+    <button class="tb-btn" id="prevPageBtn" title="Previous page (Left arrow)">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+      Prev
+    </button>
+    <div class="tb-select-wrap">
+      <select id="pageSelect" aria-label="Jump to page">
+      </select>
+    </div>
+    <button class="tb-btn" id="nextPageBtn" title="Next page (Right arrow)">
+      Next
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+    </button>
+  </div>
+  <div class="tb-right">
+    <button class="tb-btn tb-mode-btn" id="toggleSpreadBtn" title="Toggle 2-Page Spread View on desktop">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="9" height="18" rx="1"></rect><rect x="13" y="3" width="9" height="18" rx="1"></rect></svg>
+      <span id="spreadModeLabel">Spread View</span>
+    </button>
+    <a href="The-Other-Margin-Magazine.pdf" download="The-Other-Margin-Magazine.pdf" class="tb-btn tb-btn-pdf" title="Download the complete 32-page publication in print-ready PDF">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+      PDF
+    </a>
+    <a href="promo-kit.html" class="tb-btn tb-btn-link" title="Open Promo Kit">Promo Kit</a>
+  </div>
+</nav>
 <div class="desk" id="scaleWrap">
 <!-- P01 / COVER -->
 <section class="sheet" data-od-id="p01-cover">
@@ -357,6 +498,11 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
  <p class="cover-sub" data-od-id="cover-sub">What we perceive <em>&amp; what we overlook</em>. A critical exploration of gender, power, social norms and everyday life in Bangladesh.</p>
  <div class="cover-tags" data-od-id="cover-tags">
  <span class="tag">Gender</span><span class="tag">Power</span><span class="tag">Culture</span><span class="tag">Representation</span><span class="tag red">Everyday life</span>
+ </div>
+ <div class="cover-teasers">
+  <div class="ct-item"><b>THEORY</b> Beauvoir, Connell, Foucault, Hall, Kandiyoti</div>
+  <div class="ct-item"><b>CASE STUDY</b> When women police women: the grandmother effect</div>
+  <div class="ct-item"><b>VOICES</b> Real anonymous testimonies from campus &amp; home</div>
  </div>
  <div class="cover-kicker" data-od-id="cover-kicker">
  <p class="q-pull" style="margin-bottom:0">“Who decided what a <em>good woman</em> should be?”</p>
@@ -380,8 +526,38 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
  </div>
  <div class="cover-strip" data-od-id="cover-strip">
  <span>The magazine that reads the margins</span>
- <span>Free on campus</span>
- <span>01 / 32</span>
+ <div class="cover-barcode" title="ISSN 2958-8243">
+  <svg width="108" height="26" viewBox="0 0 108 26" aria-label="ISSN Barcode">
+   <rect x="0" y="0" width="2" height="18" fill="#1c1712"/>
+   <rect x="4" y="0" width="1" height="18" fill="#1c1712"/>
+   <rect x="7" y="0" width="3" height="18" fill="#1c1712"/>
+   <rect x="12" y="0" width="1" height="18" fill="#1c1712"/>
+   <rect x="15" y="0" width="2" height="18" fill="#1c1712"/>
+   <rect x="19" y="0" width="4" height="18" fill="#1c1712"/>
+   <rect x="25" y="0" width="1" height="18" fill="#1c1712"/>
+   <rect x="28" y="0" width="2" height="18" fill="#1c1712"/>
+   <rect x="32" y="0" width="3" height="18" fill="#1c1712"/>
+   <rect x="37" y="0" width="1" height="18" fill="#1c1712"/>
+   <rect x="40" y="0" width="2" height="18" fill="#1c1712"/>
+   <rect x="44" y="0" width="4" height="18" fill="#1c1712"/>
+   <rect x="50" y="0" width="1" height="18" fill="#1c1712"/>
+   <rect x="53" y="0" width="3" height="18" fill="#1c1712"/>
+   <rect x="58" y="0" width="2" height="18" fill="#1c1712"/>
+   <rect x="62" y="0" width="1" height="18" fill="#1c1712"/>
+   <rect x="65" y="0" width="3" height="18" fill="#1c1712"/>
+   <rect x="70" y="0" width="2" height="18" fill="#1c1712"/>
+   <rect x="74" y="0" width="4" height="18" fill="#1c1712"/>
+   <rect x="80" y="0" width="1" height="18" fill="#1c1712"/>
+   <rect x="83" y="0" width="2" height="18" fill="#1c1712"/>
+   <rect x="87" y="0" width="3" height="18" fill="#1c1712"/>
+   <rect x="92" y="0" width="1" height="18" fill="#1c1712"/>
+   <rect x="95" y="0" width="3" height="18" fill="#1c1712"/>
+   <rect x="100" y="0" width="2" height="18" fill="#1c1712"/>
+   <rect x="104" y="0" width="3" height="18" fill="#1c1712"/>
+   <text x="54" y="25" font-family="'IBM Plex Mono',monospace" font-size="6.5" text-anchor="middle" fill="#6e6150">ISSN 2958-8243</text>
+  </svg>
+ </div>
+ <span>Free on campus / Dhaka</span>
  </div>
  </div>
 </section>
@@ -1365,27 +1541,156 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 </section>
 </div>
 <script>
-/* Page scaler: keeps fixed A4-ratio sheets fully visible on narrow viewports. */
+/* Interactive Reader Controls & Page Scaler */
 (function(){
- var BASE=840;
- var sheets=document.querySelectorAll('.sheet');
- sheets.forEach(function(s){
- var vp=document.createElement('div');vp.className='viewport';vp.style.width=BASE+'px';
- while(s.firstChild)vp.appendChild(s.firstChild);
- s.appendChild(vp);s.style.height='auto';
- });
- function fit(){
- var w=Math.min(document.documentElement.clientWidth-16,BASE);
- var k=w/BASE;
- document.querySelectorAll('.viewport').forEach(function(vp){
- vp.style.transform='scale('+k+')';
- vp.parentElement.style.height=(vp.offsetHeight*k)+'px';
- if(k<1){vp.parentElement.style.width=w+'px';vp.parentElement.style.margin='0 auto 16px';}
- else{vp.parentElement.style.width='';vp.parentElement.style.margin='';}
- });
- }
- window.addEventListener('resize',fit);window.addEventListener('load',fit);fit();
- setTimeout(fit,600);setTimeout(fit,2000);
+  var BASE=840;
+  var sheets=document.querySelectorAll('.sheet');
+  var pageSelect=document.getElementById('pageSelect');
+  var prevBtn=document.getElementById('prevPageBtn');
+  var nextBtn=document.getElementById('nextPageBtn');
+  var spreadBtn=document.getElementById('toggleSpreadBtn');
+  var spreadLabel=document.getElementById('spreadModeLabel');
+  var desk=document.getElementById('scaleWrap');
+
+  // Wrap sheet children in .viewport for scaling on narrow devices
+  sheets.forEach(function(s, idx){
+    var vp=document.createElement('div');
+    vp.className='viewport';
+    vp.style.width=BASE+'px';
+    while(s.firstChild) vp.appendChild(s.firstChild);
+    s.appendChild(vp);
+    s.style.height='auto';
+    s.id = 'page-' + (idx + 1);
+
+    // Populate select
+    if (pageSelect) {
+      var opt = document.createElement('option');
+      opt.value = 'page-' + (idx + 1);
+      var folio = s.querySelector('.folio');
+      var name = 'Page ' + (idx + 1);
+      if (idx === 0) name = 'Cover';
+      else if (folio) {
+        var sec = folio.querySelector('.sec');
+        var b = folio.querySelector('b');
+        name = (b ? b.textContent : (idx + 1)) + '. ' + (sec ? sec.textContent.split('/')[0].trim() : 'Section');
+      }
+      opt.textContent = name;
+      pageSelect.appendChild(opt);
+    }
+  });
+
+  // Navigation handlers
+  function getCurrentPageIndex() {
+    var scrollPos = window.scrollY + 200;
+    for (var i = sheets.length - 1; i >= 0; i--) {
+      if (sheets[i].offsetTop <= scrollPos) return i;
+    }
+    return 0;
+  }
+
+  if (pageSelect) {
+    pageSelect.addEventListener('change', function(){
+      var target = document.getElementById(this.value);
+      if (target) {
+        window.scrollTo({top: target.offsetTop - 60, behavior: 'smooth'});
+      }
+    });
+  }
+
+  if (prevBtn) {
+    prevBtn.addEventListener('click', function(){
+      var curr = getCurrentPageIndex();
+      if (curr > 0) {
+        window.scrollTo({top: sheets[curr - 1].offsetTop - 60, behavior: 'smooth'});
+      }
+    });
+  }
+
+  if (nextBtn) {
+    nextBtn.addEventListener('click', function(){
+      var curr = getCurrentPageIndex();
+      if (curr < sheets.length - 1) {
+        window.scrollTo({top: sheets[curr + 1].offsetTop - 60, behavior: 'smooth'});
+      }
+    });
+  }
+
+  // Keyboard navigation
+  window.addEventListener('keydown', function(e){
+    if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'SELECT' || e.target.tagName === 'TEXTAREA')) return;
+    if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      var curr = getCurrentPageIndex();
+      if (curr > 0) {
+        e.preventDefault();
+        window.scrollTo({top: sheets[curr - 1].offsetTop - 60, behavior: 'smooth'});
+      }
+    } else if (e.key === 'ArrowRight' || e.key === 'PageDown') {
+      var curr = getCurrentPageIndex();
+      if (curr < sheets.length - 1) {
+        e.preventDefault();
+        window.scrollTo({top: sheets[curr + 1].offsetTop - 60, behavior: 'smooth'});
+      }
+    }
+  });
+
+  // Update dropdown on scroll
+  var scrollTimeout;
+  window.addEventListener('scroll', function(){
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(function(){
+      if (pageSelect) {
+        var idx = getCurrentPageIndex();
+        pageSelect.selectedIndex = idx;
+      }
+    }, 100);
+  });
+
+  // Spread mode toggle
+  var isSpread = false;
+  if (spreadBtn && desk) {
+    spreadBtn.addEventListener('click', function(){
+      isSpread = !isSpread;
+      if (isSpread) {
+        desk.classList.add('spread-mode');
+        if (spreadLabel) spreadLabel.textContent = 'Single View';
+      } else {
+        desk.classList.remove('spread-mode');
+        if (spreadLabel) spreadLabel.textContent = 'Spread View';
+      }
+      fit();
+    });
+  }
+
+  // Viewport scaling for mobile
+  function fit(){
+    if (isSpread && window.innerWidth >= 1200) {
+      document.querySelectorAll('.viewport').forEach(function(vp){
+        vp.style.transform = '';
+        vp.parentElement.style.height = '';
+        vp.parentElement.style.width = '';
+      });
+      return;
+    }
+    var w = Math.min(document.documentElement.clientWidth - 16, BASE);
+    var k = w / BASE;
+    document.querySelectorAll('.viewport').forEach(function(vp){
+      vp.style.transform = 'scale(' + k + ')';
+      vp.parentElement.style.height = (vp.offsetHeight * k) + 'px';
+      if (k < 1) {
+        vp.parentElement.style.width = w + 'px';
+        vp.parentElement.style.margin = '0 auto 16px';
+      } else {
+        vp.parentElement.style.width = '';
+        vp.parentElement.style.margin = '';
+      }
+    });
+  }
+
+  window.addEventListener('resize', fit);
+  window.addEventListener('load', fit);
+  fit();
+  setTimeout(fit, 600);
+  setTimeout(fit, 2000);
 })();
 </script>
 </body>

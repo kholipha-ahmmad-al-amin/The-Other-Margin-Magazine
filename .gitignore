@@ -1,5 +1,6 @@
-# Vercel
+# Vercel & Netlify
 .vercel
+.netlify
 
 # Node
 node_modules/
