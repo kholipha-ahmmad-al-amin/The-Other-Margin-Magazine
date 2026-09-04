@@ -1,0 +1,21 @@
+{
+  "name": "The Other Margin Magazine",
+  "short_name": "The Other Margin",
+  "description": "A 32-page critical editorial publication investigating everyday misogyny and social reproduction in Bangladesh.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#d5cdb8",
+  "theme_color": "#1c1712",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
