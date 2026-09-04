@@ -7,18 +7,21 @@ A critical editorial magazine examining gender expectations, social norms, and p
 The Other Margin is a 32-page print-style digital publication. It pairs documentary photojournalism with theoretical frameworks to analyze how everyday norms are reproduced and internalized.
 
 ### Core Sections
-- **Masthead & Contents**: Issue structure and editorial credits.
-- **Foundations**: Definitions of misogyny, patriarchy, and hostility, distinguishing systemic structures from individual prejudice.
+- **Editorial Board & Credits**: Full dedicated Credits page categorizing editorial, design, theoretical, and fieldwork leadership.
+- **Editor's Message**: Welcome letter from Editor in Chief Kholipha Ahmmad Al-Amin with formal documentary portrait.
+- **Foundations**: Distinguishing systemic structures from individual prejudice.
 - **The Cycle**: Interactive six-stage wheel detailing socialization, repetition, normalization, internalization, policing, and reproduction.
-- **Theoretical Perspectives**: Key frameworks from Simone de Beauvoir, Raewyn Connell, Michel Foucault, Stuart Hall, and Deniz Kandiyoti.
+- **Theoretical Perspectives & Media Case Studies**: Key frameworks from Simone de Beauvoir, Raewyn Connell, Michel Foucault, Stuart Hall, and Deniz Kandiyoti, enriched with pop culture visual case studies on television drama archetypes and fairness advertising.
 - **Case Studies & Columns**: Analysis of contemporary media discourse in Bangladesh and cultural standards of respectability.
+- **Our Voices & Field Data**: Survey data infographic on everyday behavioral policing and transcribed campus interviews with circular portraits.
 - **Social Ecosystem**: Structural breakdown of societal institutions reinforcing behavioral expectations.
-- **Voices & Reflection**: Anonymous real-life accounts, poetry, and a referenced bibliography.
+- **The Afterword: Our Collective Prospective**: Concluding editorial collective reflections with member headshots.
+- **Bibliography**: Academic reference archive in APA 7 format.
 
 ### Visual Identity & Design System
 - **Palette**: Warm newsprint paper (`#f4efe3`), deep ink (`#1c1712`), graphite (`#6d6a63`), and vermilion red accent (`#b5321c`).
 - **Typography**: Instrument Serif for headlines, Source Serif 4 for editorial body text, IBM Plex Mono for annotations and folios, and Noto Serif Bengali for Bengali accents.
-- **Imagery**: Six documentary duotone plates produced under a strict photojournalism visual contract.
+- **Imagery**: Documentary duotone plates and circular portraits produced under a strict photojournalism visual contract.
 - **Accessibility**: Darkened caption tokens meeting WCAG AA contrast standards (>= 4.5:1 on newsprint paper).
 
 ## Deliverables

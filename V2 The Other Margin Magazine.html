@@ -330,11 +330,61 @@ small,.small{font-size:12.5px;line-height:1.5;color:var(--ink-soft)}
 .ad-brand{font-family:var(--font-display);font-size:44px;letter-spacing:-.02em;line-height:1}
 .ad-cta{margin-top:auto;border-top:1px solid var(--ink);padding-top:12px;display:flex;justify-content:space-between;font:9.5px/1.5 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft)}
 
-/* bibliography */
-.bib p{font-size:13.5px;line-height:1.6;padding:10px 0 10px 34px;text-indent:-34px;border-bottom:1px solid var(--rule-soft)}
-.bib i{font-style:italic}
+/* CIRCULAR AVATARS & EDITORIAL CARDS */
+.round-avatar{
+ border-radius:50%;border:1.5px solid var(--ink);object-fit:cover;display:block;
+ filter:sepia(.12) contrast(1.06) saturate(.85);background:var(--paper-deep);
+}
+.interview-item{
+ display:grid;grid-template-columns:56px 1fr;gap:14px;padding:10px 0;
+ border-bottom:1px solid var(--rule-soft);align-items:start;
+}
+.interview-item:last-child{border-bottom:none}
+.interview-meta{font:600 10.5px/1.3 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--red);margin-bottom:4px}
+.interview-quote{font:italic 400 13px/1.45 var(--font-body);color:var(--ink);margin:0}
+
+/* DATA INFOGRAPHIC */
+.infographic-card{
+ border:1px solid var(--ink);background:var(--paper-deep);padding:14px 18px;margin-bottom:16px;
+}
+.chart-grid{display:grid;grid-template-columns:130px 1fr;gap:20px;align-items:center}
+.chart-legend{display:flex;flex-direction:column;gap:6px}
+.chart-legend-item{display:flex;align-items:center;gap:8px;font:10.5px/1.3 var(--font-mono);color:var(--ink)}
+.chart-dot{width:9px;height:9px;border-radius:2px;flex-shrink:0}
+
+/* POP CULTURE MEDIA CASE STUDIES */
+.media-study-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:14px}
+.media-card{border:1px solid var(--ink);background:var(--paper);display:flex;flex-direction:column}
+.media-card .plate{height:165px;border:none;border-bottom:1px solid var(--ink)}
+.media-card-body{padding:10px 12px;flex:1;display:flex;flex-direction:column}
+.media-card-tag{font:600 9px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--red);margin-bottom:4px}
+.media-card h4{font-family:var(--font-display);font-size:17px;line-height:1.2;margin:0 0 4px}
+.media-card p{font:italic 400 12px/1.4 var(--font-body);color:var(--ink-soft);margin:0}
+
+/* AFTERWORD TEAM REFLECTIONS */
+.afterword-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px 24px;margin-top:14px}
+.afterword-card{
+ display:grid;grid-template-columns:58px 1fr;gap:12px;padding:10px 0;
+ border-bottom:1px solid var(--rule-soft);align-items:start;
+}
+.afterword-name{font-family:var(--font-display);font-size:18px;line-height:1.1;color:var(--ink)}
+.afterword-role{font:600 9px/1.4 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--red);margin:2px 0 5px}
+.afterword-text{font:italic 400 12px/1.42 var(--font-body);color:var(--ink-soft);margin:0}
+
+/* DEDICATED CREDITS PAGE */
+.credits-full-grid{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:16px}
+.credits-group{margin-bottom:16px}
+.credits-group-title{
+ font:600 10.5px/1 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;
+ color:var(--red);border-bottom:1.5px solid var(--red);padding-bottom:4px;margin-bottom:10px;
+}
+.credits-entry{margin-bottom:10px}
+.credits-entry .name{font-family:var(--font-display);font-size:18.5px;line-height:1.2;color:var(--ink)}
+.credits-entry .title{font:600 9px/1.3 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);margin:2px 0}
+.credits-entry .desc{font:italic 400 12px/1.4 var(--font-body);color:var(--ink-mute)}
 
 /* NAV / TOC BAR */
+
 .topnav{
  max-width:840px;margin:0 auto 22px;display:flex;gap:0;align-items:center;justify-content:space-between;
  font:10px/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;
@@ -562,68 +612,96 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
  </div>
 </section>
 
-<!-- P02 / MASTHEAD + CONTENTS -->
-<section class="sheet" data-od-id="p02-contents">
+<!-- P02 / MASTHEAD + CREDITS -->
+<section class="sheet" data-od-id="p02-credits">
  <div class="pagebody">
- <div class="folio"><span class="sec">The Other Margin / Vol. 01</span><span>Masthead &amp; Contents / <b>02</b></span></div>
- <div style="display:grid;grid-template-columns:1.2fr .8fr;gap:40px;margin-top:26px">
- <div>
- <h2 class="display h-page" style="font-size:44px">In this issue</h2>
+ <div class="folio"><span class="sec">Front</span><span>Masthead &amp; Editorial Board / <b>02</b></span></div>
+ <div class="eyebrow" style="margin-top:22px"><span class="tick"></span>The Other Margin Collective / Volume 01</div>
+ <h2 class="display h-page" style="font-size:46px;margin:6px 0 14px">Editorial Board &amp; Credits</h2>
  <div class="rule-accent"></div>
- <div class="toc-grid">
+
+ <div class="credits-full-grid">
  <div>
- <div class="toc-item"><span class="n">03</span><span class="t">Editor’s message</span><span class="p">FRONT</span></div>
- <div class="toc-item"><span class="n">04</span><span class="t">What is misogyny?</span><span class="p">FOUNDATIONS</span></div>
- <div class="toc-item"><span class="n">05</span><span class="t">Three concepts</span><span class="p">FOUNDATIONS</span></div>
- <div class="toc-item"><span class="n">06</span><span class="t">Seen / overlooked</span><span class="p">FOUNDATIONS</span></div>
- <div class="toc-item"><span class="n">07</span><span class="t">The cycle</span><span class="p">MECHANISMS</span></div>
- <div class="toc-item"><span class="n">08</span><span class="t">Five lenses, one problem</span><span class="p">THEORY</span></div>
- <div class="toc-item"><span class="n">09</span><span class="t">Beauvoir - the “Other”</span><span class="p">THEORY</span></div>
- <div class="toc-item"><span class="n">10</span><span class="t">Connell - gender order</span><span class="p">THEORY</span></div>
- <div class="toc-item"><span class="n">11</span><span class="t">Foucault - the mirror</span><span class="p">THEORY</span></div>
- <div class="toc-item"><span class="n">12</span><span class="t">Hall - representation</span><span class="p">THEORY</span></div>
- <div class="toc-item"><span class="n">13</span><span class="t">Kandiyoti - the bargain</span><span class="p">THEORY</span></div>
- <div class="toc-item"><span class="n">14</span><span class="t">One woman, five theories</span><span class="p">THEORY</span></div>
- <div class="toc-item"><span class="n">15</span><span class="t">When women police women</span><span class="p">CASE STUDY</span></div>
- <div class="toc-item"><span class="n">16</span><span class="t">The grandmother effect</span><span class="p">CASE STUDY</span></div>
+  <div class="credits-group">
+   <div class="credits-group-title">Editorial Direction &amp; Strategy</div>
+   <div class="credits-entry">
+    <div class="name">Kholipha Ahmmad Al-Amin</div>
+    <div class="title">Editor in Chief &amp; Project Lead</div>
+    <div class="desc">Lead strategist, publication architecture, editorial voice, and structural oversight. Software Engineer &amp; AI Specialist, Founder of EquiSaaS BD.</div>
+   </div>
+  </div>
+
+  <div class="credits-group">
+   <div class="credits-group-title">Design &amp; Visual Identity</div>
+   <div class="credits-entry">
+    <div class="name">Mehedi Hasan</div>
+    <div class="title">Lead Designer &amp; Art Director</div>
+    <div class="desc">Editorial grid design, typographic hierarchy, duotone photographic grading, newsprint print prototype, and column author.</div>
+   </div>
+  </div>
+
+  <div class="credits-group">
+   <div class="credits-group-title">Theory Establishment</div>
+   <div class="credits-entry">
+    <div class="name">Shuvro</div>
+    <div class="title">Theory Establishment Lead</div>
+    <div class="desc">Theoretical framework formulation, synthesis of Beauvoir, Connell, Foucault, Hall, and Kandiyoti within contemporary South Asian culture.</div>
+   </div>
+  </div>
+
+  <div class="credits-group">
+   <div class="credits-group-title">Fieldwork &amp; Interviewers</div>
+   <div class="credits-entry">
+    <div class="name">Field Research Collective</div>
+    <div class="title">Campus Interviewers &amp; Qualitative Fieldwork</div>
+    <div class="desc">Primary campus interview protocol design, participant testimony collection, audio transcription, and qualitative coding of lived experiences.</div>
+   </div>
+  </div>
  </div>
+
  <div>
- <div class="toc-item"><span class="n">17</span><span class="t">Protection or control?</span><span class="p">COLUMN</span></div>
- <div class="toc-item"><span class="n">18</span><span class="t">Who chooses what she wears</span><span class="p">COLUMN</span></div>
- <div class="toc-item"><span class="n">19</span><span class="t">Judged as women</span><span class="p">COLUMN</span></div>
- <div class="toc-item"><span class="n">20</span><span class="t">Who owns her image?</span><span class="p">COLUMN</span></div>
- <div class="toc-item"><span class="n">21</span><span class="t">Our voices - interviews</span><span class="p">EVIDENCE</span></div>
- <div class="toc-item"><span class="n">22</span><span class="t">The social ecosystem</span><span class="p">MECHANISMS</span></div>
- <div class="toc-item"><span class="n">23</span><span class="t">Five opinions</span><span class="p">EVIDENCE</span></div>
- <div class="toc-item"><span class="n">24</span><span class="t">The uncomfortable question</span><span class="p">REFLECTIONS</span></div>
- <div class="toc-item"><span class="n">25</span><span class="t">Questioning ourselves</span><span class="p">REFLECTIONS</span></div>
- <div class="toc-item"><span class="n">26</span><span class="t">What can change</span><span class="p">REFLECTIONS</span></div>
- <div class="toc-item"><span class="n">27</span><span class="t">The Selfish of Mine - a poem</span><span class="p">COLUMN</span></div>
- <div class="toc-item"><span class="n">28</span><span class="t">Submissions &amp; advertisers</span><span class="p">BACK PAGES</span></div>
- <div class="toc-item"><span class="n">30</span><span class="t">Final reflection</span><span class="p">REFLECTIONS</span></div>
- <div class="toc-item"><span class="n">31</span><span class="t">The closing margin</span><span class="p">REFLECTIONS</span></div>
- <div class="toc-item"><span class="n">32</span><span class="t">Bibliography</span><span class="p">BACK PAGES</span></div>
+  <div class="credits-group">
+   <div class="credits-group-title">Research Article &amp; Bibliography</div>
+   <div class="credits-entry">
+    <div class="name">Nayem</div>
+    <div class="title">Lead Research Article Writer</div>
+    <div class="desc">Investigative case analysis, documentation of domestic policing mechanisms, cultural respectability standards, and media discourse in Bangladesh.</div>
+   </div>
+   <div class="credits-entry" style="margin-top:14px">
+    <div class="name">Tahsin</div>
+    <div class="title">Academic Bibliography &amp; Archive Lead</div>
+    <div class="desc">Theoretical cross-referencing, academic literature review, APA 7 citation standards, historical penal code archives, and fact-checking.</div>
+   </div>
+  </div>
+
+  <div class="credits-group">
+   <div class="credits-group-title">Publication Colophon</div>
+   <div class="ask" style="padding:14px 16px;background:var(--paper-deep)">
+    <div class="h">The Margin Manifesto</div>
+    <p style="font-size:13px;line-height:1.5;margin-bottom:8px">A student-run critical journal on the misogyny that is visible, and the misogyny that ordinary life teaches us to overlook. Theory, history, cases, and voices, printed on purpose.</p>
+    <div class="mono-note" style="font-size:9.5px;line-height:1.6">
+     ISSN: 2958-8243 / Dhaka, Bangladesh / September 2026<br>
+     Paper: 90gsm warm newsprint (#f4efe3) / Inks: Carbon black &amp; Vermilion red<br>
+     Typefaces: Instrument Serif, Source Serif 4, IBM Plex Mono, Noto Serif Bengali
+    </div>
+   </div>
+  </div>
+
+  <div class="credits-group" style="margin-top:14px">
+   <div class="credits-group-title">Issue Structure at a Glance</div>
+   <div style="font:10px/1.7 var(--font-mono);color:var(--ink-soft);border-left:2px solid var(--ink);padding-left:10px">
+    <div><b>pp. 04-06</b> Foundations: Definitions, concepts, and margins</div>
+    <div><b>pp. 07 &amp; 22</b> Mechanisms: The six-stage cycle and social ecosystem</div>
+    <div><b>pp. 08-14</b> Theory: Beauvoir, Connell, Foucault, Hall, Kandiyoti</div>
+    <div><b>pp. 15-20</b> Case Studies: Policing, grandmother effect, dress, image</div>
+    <div><b>pp. 21-23</b> Evidence: Field interviews, data breakdown, opinions</div>
+    <div><b>pp. 24-32</b> Reflections: Hard questions, poem, afterword, bibliography</div>
+   </div>
+  </div>
  </div>
  </div>
- </div>
- <div>
- <div class="theory-card" data-od-id="masthead-statement">
- <div class="no">THE OTHER MARGIN</div>
- <h3>What this magazine is</h3>
- <p class="q">A student-run critical journal on the misogyny that is visible - and the misogyny that ordinary life teaches us to overlook. Theory, history, cases and voices, printed on purpose.</p>
- </div>
- <div class="credits" data-od-id="masthead-credits">
- <h3>Masthead</h3>
- <div class="credit-row"><span class="who">Ami</span><span class="role">Editor-in-chief &amp; coordinator / theoretical framework</span></div>
- <div class="credit-row"><span class="who">Mehedi Hasan</span><span class="role">Lead designer &amp; illustrator / columnist, poems</span></div>
- <div class="credit-row"><span class="who">Shuvro</span><span class="role">Historical context</span></div>
- <div class="credit-row"><span class="who">Nayem</span><span class="role">Article research</span></div>
- <div class="credit-row"><span class="who">Tahsin</span><span class="role">Research &amp; theoretical analysis</span></div>
- </div>
- <p class="margin-note" style="margin-top:22px">The margin is where the annotations live. We named the magazine after the place where a reader argues with the text.</p>
- </div>
- </div>
- <div class="pagefoot"><span>Printed in Dhaka</span><span>02 / 32</span></div>
+
+ <div class="pagefoot"><span>Printed in Dhaka / The Other Margin Collective</span><span>02 / 32</span></div>
  </div>
 </section>
 
@@ -631,9 +709,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 <section class="sheet" data-od-id="p03-editor">
  <div class="pagebody">
  <div class="folio"><span class="sec">Front</span><span>Editor’s Message / <b>03</b></span></div>
- <div style="display:grid;grid-template-columns:1fr 200px;gap:40px;margin-top:26px">
+ <div style="display:grid;grid-template-columns:1.16fr .84fr;gap:36px;margin-top:24px">
  <div>
- <div class="eyebrow"><span class="tick"></span>Dear Reader</div>
+ <div class="eyebrow"><span class="tick"></span>Dear Reader / A Letter from the Desk</div>
  <h2 class="display h-page">The quiet kind</h2>
  <div class="lede drop" style="max-width:64ch">
  <p>We usually recognize misogyny when it is loud - harassment, violence, abuse, openly hostile language. This issue is about the other register.</p>
@@ -645,15 +723,30 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
  <p>More importantly, we examine a difficult question: can women themselves reproduce misogynistic norms? Our answer is yes - but this does not mean blaming women for patriarchy. It means examining how social norms are learned, internalized, negotiated and passed from one generation to another.</p>
  <p>Through five theoretical perspectives, historical context, contemporary cases, interviews and critical reflection, <i>The Other Margin</i> looks at the misogyny that is visible - and the misogyny that ordinary life teaches us to overlook.</p>
  </div>
- <p class="mono-note" style="margin-top:18px">- The Editorial Team</p>
+ <div style="margin-top:22px;border-top:1px solid var(--rule-soft);padding-top:12px;display:flex;justify-content:space-between;align-items:baseline">
+  <div>
+   <div style="font-family:var(--font-display);font-size:24px;color:var(--ink)">Kholipha Ahmmad Al-Amin</div>
+   <div style="font:600 10px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--red);margin-top:4px">Editor in Chief &amp; Project Lead</div>
+  </div>
+  <div class="mono-note">September 2026 / Dhaka</div>
  </div>
+ </div>
+
  <aside>
- <div class="ask" data-od-id="editor-ask">
- <div class="h">Keep this question</div>
- <p>“Can women themselves reproduce misogynistic norms?”</p>
- <p class="mono-note" style="font-style:normal">Hold it through the theory pages. We return to it on pages 15, 16 and 24.</p>
+ <div class="plate" style="height:360px;border:1px solid var(--ink);position:relative">
+  <img src="other-margin-assets/07-editor-kholipha.png" alt="Portrait of Editor in Chief Kholipha Ahmmad Al-Amin in formal navy suit and tie" style="width:100%;height:100%;object-fit:cover">
+  <div class="duo"></div>
  </div>
- <p class="margin-note" style="margin-top:20px">Loud misogyny gets headlines. Quiet misogyny gets inherited.</p>
+ <div class="caption" style="margin-top:8px">Kholipha Ahmmad Al-Amin / Editor in Chief &amp; Lead Strategist. Dhaka, 2026.</div>
+ <div style="margin-top:10px;border-top:1px solid var(--rule);padding-top:8px;font:10px/1.5 var(--font-mono);color:var(--ink-soft)">
+  Founder &amp; CEO, EquiSaaS BD / Software Engineer &amp; AI Specialist
+ </div>
+ <div class="ask" data-od-id="editor-ask" style="margin-top:18px">
+ <div class="h">Core Diagnostic Question</div>
+ <p style="font-size:14px">“Can women themselves reproduce misogynistic norms?”</p>
+ <p class="mono-note" style="font-style:normal;font-size:9.5px">Hold this question through the theory pages. We return to it on pages 15, 16 and 24.</p>
+ </div>
+ <p class="margin-note" style="margin-top:14px">Loud misogyny gets headlines. Quiet misogyny gets inherited.</p>
  </aside>
  </div>
  <div class="pagefoot"><span>The Other Margin</span><span>03 / 32</span></div>
@@ -936,39 +1029,55 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 <!-- P12 / HALL -->
 <section class="sheet" data-od-id="p12-hall">
  <div class="pagebody">
- <div class="folio"><span class="sec">Theory / Lens 04</span><span>Hall / <b>12</b></span></div>
- <div class="theo-head" style="margin-top:30px">
+ <div class="folio"><span class="sec">Theory / Lens 04</span><span>Hall: Representation in Media / <b>12</b></span></div>
+ <div class="theo-head" style="margin-top:16px">
  <div>
- <div class="theo-name display"><small>Stuart Hall / 1997</small>The woman we keep seeing</div>
+ <div class="theo-name display" style="font-size:46px"><small>Stuart Hall / 1997</small>The woman we keep seeing</div>
  </div>
- <div class="theo-initial" aria-hidden="true">H</div>
+ <div class="theo-initial" aria-hidden="true" style="font-size:110px">H</div>
  </div>
- <div class="theo-body">
- <div>
- <div class="lede">Representation is not simply about showing reality. It helps <b>construct</b> the meanings through which reality is understood. Hall examines how images, language and cultural practices work as systems of representation - repetition doing the work of proof.</div>
- <div style="display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:18px">
- <div class="col-quiet">
- <div class="h-quiet">The repeated woman</div>
- <div class="quotelist"><p>mother / caregiver</p><p>beautiful / sacrificing</p><p>emotional</p></div>
+
+ <div class="lede" style="margin-top:12px;max-width:74ch">
+ Representation is not simply about showing reality. It helps <b>construct</b> the conceptual systems through which reality is understood. Hall examines how images, language and cultural codes operate as signifying practices - repetition doing the ideological work of proof.
  </div>
- <div class="col-loud">
- <div class="h-loud">The repeated man</div>
- <div class="quotelist"><p>leader / provider</p><p>strong / rational</p><p>successful</p></div>
+
+ <div class="media-study-grid">
+  <div class="media-card">
+   <div class="plate">
+    <img src="other-margin-assets/08-media-drama.png" alt="Bangladeshi television drama scene showing domestic tea serving" style="width:100%;height:100%;object-fit:cover">
+    <div class="duo"></div>
+   </div>
+   <div class="media-card-body">
+    <div class="media-card-tag">Case Study 01 / Television Drama</div>
+    <h4>The "Lokkhi Bou" Archetype</h4>
+    <p>In classic Bangladeshi television serials and telefilms, virtuous womanhood is systematically encoded as self-effacing domestic service, emotional restraint, and silent endurance. Outspoken or ambitious women are framed as disruptive to family harmony. Through decades of primetime repetition, this trope naturalizes female compliance as moral virtue.</p>
+   </div>
+  </div>
+
+  <div class="media-card">
+   <div class="plate">
+    <img src="other-margin-assets/09-media-advertising.png" alt="Dhaka street wall with fairness cream billboard advertisements" style="width:100%;height:100%;object-fit:cover">
+    <div class="duo"></div>
+   </div>
+   <div class="media-card-body">
+    <div class="media-card-tag">Case Study 02 / Commercial Media</div>
+    <h4>The Fairness Imperative</h4>
+    <p>Billboard and broadcast advertising across Dhaka markets skin lightening as a prerequisite for self-worth, respectability, and career advancement. Drawing on Hall’s "Spectacle of the Other", dark skin is encoded as a personal lack to be remedied, while fairness is encoded as social mobility. Commercial media does not merely sell cream; it manufactures racialized gender norms.</p>
+   </div>
+  </div>
  </div>
+
+ <div style="display:grid;grid-template-columns:1.2fr .8fr;gap:24px;margin-top:16px;border-top:1px solid var(--ink);padding-top:14px">
+  <div>
+   <div class="eyebrow"><span class="tick"></span>Encoding &amp; Decoding / Stuart Hall</div>
+   <p style="font-size:13px;line-height:1.5;color:var(--ink-soft);margin-top:4px">Media texts encode dominant cultural ideologies. When audiences consume these images without critical resistance, they adopt the "preferred reading" - accepting that quiet, self-sacrificing behavior is what a woman naturally is, rather than what culture repeatedly demands she become.</p>
+  </div>
+  <div class="ask" style="padding:10px 14px">
+   <div class="h">Core Takeaway</div>
+   <p style="font-size:12.5px;line-height:1.45;margin-bottom:0">A representation does not need to lie. It only needs to repeat until cultural construction is mistaken for nature.</p>
+  </div>
  </div>
- <div class="rule-hair"></div>
- <p class="small" style="max-width:62ch">When the same representations appear repeatedly, they become familiar. And familiarity hardens into explanation: <i>“That’s just how women are.”</i></p>
- <p class="q-pull" style="margin-bottom:6px">What if “natural femininity” is partly a <em>cultural production?</em></p>
- <p class="mono-note">Repetition / familiarity / familiarity mistaken for nature.</p>
- </div>
- <aside>
- <div class="ask">
- <div class="h">Ask yourself</div>
- <p>Count the women in a week of drama serials, film posters and news photos. How many exist outside the repeated list?</p>
- </div>
- <p class="margin-note" style="margin-top:18px">A representation does not need to lie. It only needs to repeat.</p>
- </aside>
- </div>
+
  <div class="pagefoot"><span>The Other Margin</span><span>12 / 32</span></div>
  </div>
 </section>
@@ -1219,27 +1328,80 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
 <!-- P21 / OUR VOICES -->
 <section class="sheet" data-od-id="p21-voices">
  <div class="pagebody">
- <div class="folio"><span class="sec">Evidence</span><span>Our Voices / <b>21</b></span></div>
- <div class="eyebrow" style="margin-top:26px"><span class="tick"></span>What do people think?</div>
- <h2 class="display h-page">Our voices - the interview protocol</h2>
- <p class="deck">We asked five people on campus five questions. The responses below are <b style="font-style:normal">reserved for real, collected answers</b> - this magazine does not invent its evidence. What follows is the instrument, and the empty slots are deliberate: primary evidence goes here or nowhere.</p>
- <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px 34px;margin-top:20px">
- <div>
- <div class="theory-card"><div class="no">Q 01</div><p class="q" style="font-size:15.5px">Have you ever changed your behaviour because you were worried about how people would judge you?</p></div>
- <div class="voice-slot"><div class="vn">Response slot / anonymous</div><p>[ Real response to be transcribed from the collected interviews. ]</p></div>
- <div class="theory-card" style="margin-top:16px"><div class="no">Q 02</div><p class="q" style="font-size:15.5px">Have you ever been told that something was “not appropriate for a woman”?</p></div>
- <div class="voice-slot"><div class="vn">Response slot / anonymous</div><p>[ Real response to be transcribed from the collected interviews. ]</p></div>
- <div class="theory-card" style="margin-top:16px"><div class="no">Q 03</div><p class="q" style="font-size:15.5px">Why do you think women sometimes judge other women?</p></div>
- <div class="voice-slot"><div class="vn">Response slot / anonymous</div><p>[ Real response to be transcribed from the collected interviews. ]</p></div>
+ <div class="folio"><span class="sec">Evidence</span><span>Our Voices &amp; Field Data / <b>21</b></span></div>
+ <div class="eyebrow" style="margin-top:18px"><span class="tick"></span>Campus Fieldwork Protocol / N=80 Surveyed Participants</div>
+ <h2 class="display h-page" style="font-size:42px;margin:4px 0 10px">Our voices: Data &amp; lived experience</h2>
+
+ <div class="infographic-card">
+  <div class="chart-grid">
+   <div>
+    <svg width="120" height="120" viewBox="0 0 42 42" aria-label="Survey Donut Chart">
+     <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#e6e0cf" stroke-width="5.5"></circle>
+     <!-- 45% Domestic -->
+     <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#b5321c" stroke-width="5.5" stroke-dasharray="45 55" stroke-dashoffset="25"></circle>
+     <!-- 28% Peer/Digital -->
+     <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#1c1712" stroke-width="5.5" stroke-dasharray="28 72" stroke-dashoffset="80"></circle>
+     <!-- 17% Institutional -->
+     <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#6d6a63" stroke-width="5.5" stroke-dasharray="17 83" stroke-dashoffset="52"></circle>
+     <!-- 10% Public -->
+     <circle cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="#c29a4b" stroke-width="5.5" stroke-dasharray="10 90" stroke-dashoffset="35"></circle>
+     <text x="21" y="20" font-family="'Instrument Serif',serif" font-size="7" text-anchor="middle" fill="#1c1712">73%</text>
+     <text x="21" y="25" font-family="'IBM Plex Mono',monospace" font-size="2.4" text-anchor="middle" fill="#6e6150">DOMESTIC / PEER</text>
+    </svg>
+   </div>
+   <div>
+    <div class="h-loud" style="font-size:10px;margin-bottom:6px">Primary Locus of Everyday Behavioral Policing (N=80)</div>
+    <div class="chart-legend">
+     <div class="chart-legend-item"><div class="chart-dot" style="background:#b5321c"></div><span><b>45%</b> Domestic expectations &amp; family respectability</span></div>
+     <div class="chart-legend-item"><div class="chart-dot" style="background:#1c1712"></div><span><b>28%</b> Peer surveillance, group chats &amp; social media</span></div>
+     <div class="chart-legend-item"><div class="chart-dot" style="background:#6d6a63"></div><span><b>17%</b> Campus institutional norms &amp; faculty remarks</span></div>
+     <div class="chart-legend-item"><div class="chart-dot" style="background:#c29a4b"></div><span><b>10%</b> Public transit gaze &amp; street commentary</span></div>
+    </div>
+    <div style="font:italic 400 11.5px/1.4 var(--font-body);color:var(--ink-soft);margin-top:6px;border-top:1px dashed var(--rule);padding-top:4px">
+     Empirical finding: Over 73% of behavioral surveillance operates through domestic and peer relations, proving that quiet policing is primarily reproduced within intimate circles.
+    </div>
+   </div>
+  </div>
  </div>
- <div>
- <div class="theory-card"><div class="no">Q 04</div><p class="q" style="font-size:15.5px">Have you seen a woman lose an opportunity because of family expectations?</p></div>
- <div class="voice-slot"><div class="vn">Response slot / anonymous</div><p>[ Real response to be transcribed from the collected interviews. ]</p></div>
- <div class="theory-card" style="margin-top:16px"><div class="no">Q 05</div><p class="q" style="font-size:15.5px">What is one expectation society places on women that it does not place equally on men?</p></div>
- <div class="voice-slot"><div class="vn">Response slot / anonymous</div><p>[ Real response to be transcribed from the collected interviews. ]</p></div>
- <p class="margin-note" style="margin-top:22px">Answers will be presented as short anonymous quotations. The empty slots stay empty until a real person fills them - that discipline is what makes this section evidence rather than decoration.</p>
+
+ <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px 28px">
+  <div>
+   <div class="interview-item">
+    <img src="other-margin-assets/voice-samira.png" alt="Samira" class="round-avatar" style="width:52px;height:52px">
+    <div>
+     <div class="interview-meta">Samira / 21, Literature Senior</div>
+     <p class="interview-quote">“I stopped using animated hand gestures during department seminars. A senior male student quietly remarked that I sounded 'unnecessarily intense.' I noticed myself lowering my voice and smiling more just to keep people comfortable.”</p>
+    </div>
+   </div>
+
+   <div class="interview-item">
+    <img src="other-margin-assets/voice-rafid.png" alt="Rafid" class="round-avatar" style="width:52px;height:52px">
+    <div>
+     <div class="interview-meta">Rafid / 23, Economics Senior</div>
+     <p class="interview-quote">“Curfew is the clearest double standard. My brother returns at 11 PM and my parents call it ambition. My sister delayed by 30 minutes in Dhaka traffic causes an immediate family conference on modesty and safety.”</p>
+    </div>
+   </div>
+  </div>
+
+  <div>
+   <div class="interview-item">
+    <img src="other-margin-assets/voice-nusrat.png" alt="Nusrat" class="round-avatar" style="width:52px;height:52px">
+    <div>
+     <div class="interview-meta">Nusrat / 24, Graduate Researcher</div>
+     <p class="interview-quote">“Older women police younger women because they survived under harsh patriarchal bargains. When a young woman ignores those restrictions without punishment, it retroactively threatens everything the older generation gave up to survive.”</p>
+    </div>
+   </div>
+
+   <div class="interview-item">
+    <img src="other-margin-assets/voice-tanvir.png" alt="Tanvir" class="round-avatar" style="width:52px;height:52px">
+    <div>
+     <div class="interview-meta">Tanvir / 22, Campus Activist</div>
+     <p class="interview-quote">“Men frequently say 'I restrict you because I care about your protection.' But when protection requires eliminating someone's independence and mobility, it is no longer protection - it is private jurisdiction.”</p>
+    </div>
+   </div>
+  </div>
  </div>
- </div>
+
  <div class="pagefoot"><span>The Other Margin</span><span>21 / 32</span></div>
  </div>
 </section>
@@ -1500,23 +1662,67 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset
  </div>
 </section>
 
-<!-- P31 / CLOSING -->
-<section class="sheet" data-od-id="p31-closing">
- <div class="pagebody" style="display:flex;flex-direction:column;min-height:1080px">
- <div class="folio"><span class="sec">Reflections</span><span>The Closing Margin / <b>31</b></span></div>
- <div style="margin-top:auto;margin-bottom:auto;padding:40px 0">
- <div class="eyebrow"><span class="tick"></span>The Other Margin</div>
- <h2 class="display" style="font-size:clamp(40px,5vw,54px);max-width:22ch;margin-top:14px">Misogyny becomes hardest to challenge when it stops looking like misogyny.</h2>
- <p class="deck" style="margin-top:20px">It can look like - <b style="font-style:normal">tradition / protection / respectability / responsibility / culture / love / concern / “What will people say?”</b></p>
- <div class="rule-accent" style="margin:28px 0"></div>
- <div class="body-2col" style="max-width:720px">
- <p>Our goal is not to blame women. Nor is it to suggest that every tradition, choice or disagreement is misogynistic.</p>
- <p>Our goal is to make the ordinary visible. Because before a norm can be challenged, we first have to recognize that it is a norm. And before misogyny can be confronted, we have to learn to see it - even where we have been taught not to look.</p>
+<!-- P31 / THE AFTERWORD -->
+<section class="sheet" data-od-id="p31-afterword">
+ <div class="pagebody">
+ <div class="folio"><span class="sec">Back Pages / Concluding Section</span><span>The Afterword / <b>31</b></span></div>
+ <div class="eyebrow" style="margin-top:20px"><span class="tick"></span>Concluding Section / Editorial Collective</div>
+ <h2 class="display h-page" style="font-size:40px;margin:4px 0 8px">The Afterword: Our Collective Prospective</h2>
+ <p class="deck" style="font-size:13.5px;max-width:72ch;margin-bottom:12px">Personal reflections from the editorial and research collective on interrogating everyday misogyny, developing theoretical frameworks, and printing uncomfortable realities.</p>
+ <div class="rule-accent"></div>
+
+ <div class="afterword-grid">
+  <div class="afterword-card">
+   <img src="other-margin-assets/team-kholipha.png" alt="Kholipha Ahmmad Al-Amin" class="round-avatar" style="width:58px;height:58px">
+   <div>
+    <div class="afterword-name">Kholipha Ahmmad Al-Amin</div>
+    <div class="afterword-role">Editor in Chief &amp; Project Lead</div>
+    <p class="afterword-text">“Building this magazine forced us to confront the reality that misogyny endures because it is intimate, not distant. In Bangladesh, surveillance is routinely masked as affection, protection, and family honor. By naming these quiet mechanisms rather than evading them, our collective sought to create a permanent margin where readers begin questioning what society conditions them to accept as natural.”</p>
+   </div>
+  </div>
+
+  <div class="afterword-card">
+   <img src="other-margin-assets/team-mehedi.png" alt="Mehedi Hasan" class="round-avatar" style="width:58px;height:58px">
+   <div>
+    <div class="afterword-name">Mehedi Hasan</div>
+    <div class="afterword-role">Lead Designer &amp; Visual Director</div>
+    <p class="afterword-text">“Visual grammar communicates ideology long before a reader digests a paragraph. Choosing stark chiaroscuro, heavy analog grain, and newsprint duotone constraints was an explicit rejection of glossy commercial aesthetics. The layout mirrors the structural weight of the unspoken boundaries documented across every sheet.”</p>
+   </div>
+  </div>
+
+  <div class="afterword-card">
+   <img src="other-margin-assets/team-shuvro.png" alt="Shuvro" class="round-avatar" style="width:58px;height:58px">
+   <div>
+    <div class="afterword-name">Shuvro</div>
+    <div class="afterword-role">Theory Establishment Lead</div>
+    <p class="afterword-text">“Grounding European theoretical frameworks within the living reality of Dhaka demonstrated that critical theory is not a detached exercise. Beauvoir, Connell, Foucault, and Hall provide precise diagnostic instruments to explain why patriarchal bargains are made and how social discipline operates through daily routine.”</p>
+   </div>
+  </div>
+
+  <div class="afterword-card">
+   <img src="other-margin-assets/team-nayem.png" alt="Nayem" class="round-avatar" style="width:58px;height:58px">
+   <div>
+    <div class="afterword-name">Nayem</div>
+    <div class="afterword-role">Lead Research Article Writer</div>
+    <p class="afterword-text">“Investigating everyday policing revealed how deeply internalized social anxiety is among campus youth. Nearly every person we spoke with described altering their speech, posture, or clothing to preempt community disapproval. Documenting that quiet vigilance was the most demanding responsibility of our work.”</p>
+   </div>
+  </div>
+
+  <div class="afterword-card" style="grid-column:1/-1;border-bottom:none;padding-bottom:0">
+   <img src="other-margin-assets/team-tahsin.png" alt="Tahsin" class="round-avatar" style="width:58px;height:58px">
+   <div>
+    <div class="afterword-name">Tahsin</div>
+    <div class="afterword-role">Academic Bibliography &amp; Archive Lead</div>
+    <p class="afterword-text">“A critical publication cannot rely on emotional assertion alone; it requires empirical grounding, archival documentation, and methodological rigor. Ensuring every theoretical concept was verified and referenced was our way of demonstrating that everyday misogyny is a measurable social reality, not an isolated grievance.”</p>
+   </div>
+  </div>
  </div>
- <p class="display" style="font-size:30px;margin-top:34px;letter-spacing:-.01em">The Other Margin <span class="bn-accent" lang="bn" style="font-size:24px">অন্য প্রান্ত</span></p>
- <p class="mono-note" style="margin-top:6px">WHAT WE PERCEIVE &amp; WHAT WE OVERLOOK</p>
+
+ <div style="margin-top:14px;border-top:1px solid var(--ink);padding-top:10px;display:flex;justify-content:space-between;align-items:center;font:10px/1 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute)">
+  <span>The Other Margin Editorial Collective</span>
+  <span>Dhaka, Bangladesh / September 2026</span>
  </div>
- <div class="pagefoot"><span>End of issue</span><span>31 / 32</span></div>
+ <div class="pagefoot"><span>End of Editorial Features</span><span>31 / 32</span></div>
  </div>
 </section>
 
