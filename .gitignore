@@ -9,3 +9,5 @@ node_modules/
 Thumbs.db
 *.swp
 *.bak
+
+.vercel
