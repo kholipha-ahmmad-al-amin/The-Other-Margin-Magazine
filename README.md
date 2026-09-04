@@ -27,6 +27,11 @@ The Other Margin is a 32-page print-style digital publication. It pairs document
 - **Promo Kit**: `promo-kit.html` (and `V2 The Other Margin Promo Kit.html`) - Coordinated multi-format promotional surfaces including system sheet, A3 poster, square post (1080x1080), portrait post (1080x1350), and vertical story (1080x1920).
 - **Assets**: `other-margin-assets/` - Documentary photographic plates and style contract.
 
+## Live Deployment
+
+- **Online Magazine**: [the-other-margin-magazine.vercel.app](https://the-other-margin-magazine.vercel.app/)
+- **Promo Kit Surface**: [the-other-margin-magazine.vercel.app/promo-kit.html](https://the-other-margin-magazine.vercel.app/promo-kit.html)
+
 ## Local Setup
 
 To preview locally:
