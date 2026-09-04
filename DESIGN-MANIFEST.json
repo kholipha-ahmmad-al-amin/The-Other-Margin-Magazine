@@ -1,0 +1,57 @@
+{
+  "schema": "autoclaw.autodesign.export.v1",
+  "title": "V2 The Other Margin Magazine.html",
+  "exportedAt": "2026-09-04T05:13:02.420Z",
+  "entryFile": "V2 The Other Margin Magazine.html",
+  "sourceFiles": {
+    "all": [
+      "memory/2026-09-04.md",
+      ".openclaw/tmp/textscan2.js",
+      "V2 The Other Margin Magazine.html",
+      ".openclaw/tmp/textscan.js",
+      "V2 The Other Margin Promo Kit.html",
+      ".openclaw/tmp/spotcheck.js",
+      ".openclaw/tmp/qa_v2.js",
+      ".openclaw/tmp/hygiene_clean.js",
+      ".openclaw/tmp/audit_hygiene.js",
+      ".openclaw/tmp/validate.js",
+      "V1 The Other Margin Promo Kit.html",
+      "V1 The Other Margin Magazine.html",
+      "other-margin-assets/batch.json",
+      "other-margin-assets/generate_assets.py",
+      "other-margin-assets/visual-style-contract.md",
+      "other-margin-assets/01-cover.png",
+      "other-margin-assets/02-mirror.png",
+      "other-margin-assets/03-hands.png",
+      "other-margin-assets/04-phones.png",
+      "other-margin-assets/05-street.png",
+      "other-margin-assets/06-window.png"
+    ],
+    "html": [
+      "V2 The Other Margin Magazine.html",
+      "V2 The Other Margin Promo Kit.html",
+      "V1 The Other Margin Promo Kit.html",
+      "V1 The Other Margin Magazine.html"
+    ],
+    "markdown": [
+      "memory/2026-09-04.md",
+      "other-margin-assets/visual-style-contract.md"
+    ],
+    "images": [
+      "other-margin-assets/01-cover.png",
+      "other-margin-assets/02-mirror.png",
+      "other-margin-assets/03-hands.png",
+      "other-margin-assets/04-phones.png",
+      "other-margin-assets/05-street.png",
+      "other-margin-assets/06-window.png"
+    ],
+    "data": [
+      "other-margin-assets/batch.json"
+    ]
+  },
+  "implementationNotes": [
+    "Open the entry file first, then inspect the generated HTML, CSS, Markdown, data and image assets before coding.",
+    "Preserve visible layout, tokens, responsive behavior and meaningful interactions from the exported prototype.",
+    "Keep prototype preview chrome out of the production implementation."
+  ]
+}

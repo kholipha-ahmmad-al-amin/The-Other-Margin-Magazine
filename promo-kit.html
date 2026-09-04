@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Other Margin - Promo Kit</title>
+<!--
+  Discovery:
+    deliverable: coordinated multi-format kit sharing the magazine's visual system
+    boards: system sheet / A3 poster / 1080x1080 / 1080x1350 / 1080x1920 story
+    direction: newsprint documentary editorial (same tokens as the magazine)
+-->
+<style>
+:root{
+  --paper:#f4efe3;
+  --paper-deep:#ebe4d2;
+  --ink:#1c1712;
+  --ink-soft:#4c443a;
+  --ink-mute:#6e6150;
+  --graphite:#6d6a63;
+  --rule:#c9c0aa;
+  --rule-soft:#d8d1bd;
+  --red:#b5321c;
+  --red-tint:#efdfd6;
+  --font-display:'Instrument Serif',Georgia,'Times New Roman',serif;
+  --font-body:'Source Serif 4',Georgia,'Times New Roman',serif;
+  --font-mono:'IBM Plex Mono','Courier New',monospace;
+  --font-bn:'Noto Serif Bengali',serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{
+  background:
+    radial-gradient(circle, rgba(28,23,18,.045) 1px, transparent 1.4px) 0 0/16px 16px,
+    #d8d0bc;
+  font-family:var(--font-body);color:var(--ink);-webkit-font-smoothing:antialiased;
+}
+img{display:block;max-width:100%}
+.kit{max-width:1080px;margin:0 auto;padding:30px 20px 80px}
+
+.kit-head{border:1px solid var(--ink);background:var(--paper);padding:22px 26px;display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:10px}
+.kit-head h1{font-family:var(--font-display);font-weight:400;font-size:30px;letter-spacing:-.02em}
+.kit-head h1 em{color:var(--red);font-style:normal}
+.kit-head p{font:10.5px/1.5 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+
+.sect-label{
+  display:flex;align-items:center;gap:12px;
+  font:600 10.5px/1 var(--font-mono);letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);
+  margin:40px 0 16px;
+}
+.sect-label::after{content:"";flex:1;height:1px;background:var(--ink)}
+
+.board{
+  container-type:inline-size;
+  background:
+    radial-gradient(circle, rgba(28,23,18,.05) 1px, transparent 1.4px) 0 0/14px 14px,
+    var(--paper);
+  border:1px solid var(--ink);
+  box-shadow:0 1px 2px rgba(28,23,18,.25),0 14px 40px -18px rgba(28,23,18,.45);
+  position:relative;overflow:hidden;
+}
+.board-meta{display:flex;justify-content:space-between;font:9.5px/1.4 var(--font-mono);letter-spacing:.14em;text-transform:uppercase;color:var(--ink-mute);margin-top:8px}
+
+/* SYSTEM SHEET */
+.sys{padding:5cqw;display:grid;grid-template-columns:1.1fr .9fr;gap:5cqw}
+.sys .ink-legend{border-top:2px solid var(--ink);padding-top:1.6cqw}
+.swatches{display:grid;grid-template-columns:repeat(5,1fr);gap:1.2cqw;margin-top:1.4cqw}
+.sw{aspect-ratio:1;border:1px solid var(--ink);position:relative}
+.sw span{position:absolute;left:0;right:0;bottom:-1.9cqw;font:0.62rem/1 var(--font-mono);letter-spacing:.06em;color:var(--ink-soft)}
+.type-spec{margin-top:3.4cqw}
+.type-spec .row{display:grid;grid-template-columns:10cqw 1fr;align-items:baseline;gap:1.6cqw;padding:1cqw 0;border-bottom:1px solid var(--rule-soft)}
+.type-spec .k{font:0.62rem/1.4 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute)}
+.ink-demo{margin-top:3.2cqw;border:1px solid var(--ink);background:var(--paper-deep);padding:2cqw}
+.ink-demo .t{font:600 0.62rem/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--ink);margin-bottom:1.2cqw}
+.ink-demo .red-line{font:italic 1.35cqw/1.5 var(--font-body);color:var(--red)}
+.ink-demo .pencil-line{font:italic 1.35cqw/1.5 var(--font-body);color:var(--graphite)}
+.bn{font-family:var(--font-bn)}
+
+/* POSTER (A3 / 1:1.414) */
+.poster{aspect-ratio:1/1.414;display:flex;flex-direction:column}
+.poster .mast{display:flex;justify-content:space-between;font:1.7cqw/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);padding:3.4cqw 4.4cqw 1.8cqw;border-bottom:1px solid var(--ink)}
+.poster .body{padding:4.4cqw;display:flex;flex-direction:column;flex:1}
+.poster .kick{font:2cqw/1 var(--font-mono);letter-spacing:.24em;text-transform:uppercase;color:var(--red)}
+.poster h2{font-family:var(--font-display);font-weight:400;font-size:13.5cqw;line-height:.94;letter-spacing:-.025em;margin:2cqw 0 0}
+.poster h2 i{color:var(--red)}
+.poster .deck{font:italic 3.2cqw/1.45 var(--font-body);color:var(--ink-soft);margin-top:2.6cqw;max-width:74cqw}
+.poster figure{margin-top:auto;border:1px solid var(--ink);position:relative}
+.poster figure img{width:100%;aspect-ratio:16/10;object-fit:cover;filter:sepia(.14) contrast(1.06) saturate(.82)}
+.poster figure .duo{position:absolute;inset:0;background:linear-gradient(180deg,rgba(244,239,227,.06),rgba(28,23,18,.2));mix-blend-mode:multiply}
+.poster .cap{font:1.6cqw/1.5 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-mute);margin-top:1.2cqw}
+.poster .foot{border-top:1px solid var(--ink);margin-top:2.4cqw;padding-top:1.6cqw;display:flex;justify-content:space-between;font:1.7cqw/1.4 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* SOCIAL */
+.social-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:22px}
+.social-row .board{width:100%}
+.sq{aspect-ratio:1;padding:6cqw;display:flex;flex-direction:column}
+.sq .tag{align-self:flex-start;font:2cqw/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;border:1px solid var(--red);color:var(--red);padding:1.4cqw 2cqw}
+.sq h3{font-family:var(--font-display);font-weight:400;font-size:8.6cqw;line-height:1.05;letter-spacing:-.02em;margin:auto 0}
+.sq h3 i{color:var(--red)}
+.sq .ft{display:flex;justify-content:space-between;font:2cqw/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);border-top:1px solid var(--ink);padding-top:2.2cqw}
+.pt{aspect-ratio:4/5;display:flex;flex-direction:column}
+.pt .ph{position:relative;flex:1;overflow:hidden}
+.pt .ph img{width:100%;height:100%;object-fit:cover;filter:sepia(.14) contrast(1.06) saturate(.82)}
+.pt .ph .duo{position:absolute;inset:0;background:linear-gradient(180deg,rgba(244,239,227,.05),rgba(28,23,18,.25));mix-blend-mode:multiply}
+.pt .word{position:absolute;font:italic 3.4cqw/1.2 var(--font-body);color:rgba(28,23,18,.65);border-bottom:1px solid rgba(109,106,99,.5)}
+.pt .cap-block{padding:4.4cqw;background:var(--paper)}
+.pt .cap-block h3{font-family:var(--font-display);font-weight:400;font-size:6.4cqw;line-height:1.08;letter-spacing:-.02em}
+.pt .cap-block h3 i{color:var(--red)}
+.pt .cap-block .ft{display:flex;justify-content:space-between;font:2.2cqw/1 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-mute);margin-top:3cqw;border-top:1px solid var(--ink);padding-top:2.4cqw}
+.st{aspect-ratio:9/16;padding:7cqw;display:flex;flex-direction:column}
+.st .mast{display:flex;justify-content:space-between;align-items:baseline;font:2.6cqw/1 var(--font-mono);letter-spacing:.18em;text-transform:uppercase;color:var(--ink-soft);border-bottom:1px solid var(--ink);padding-bottom:2.6cqw}
+.st h3{font-family:var(--font-display);font-weight:400;font-size:7.4cqw;line-height:1.04;letter-spacing:-.02em;margin-top:4cqw}
+.st h3 i{color:var(--red)}
+.st ol{list-style:none;margin-top:5cqw;flex:1}
+.st ol li{padding:2.6cqw 0;border-bottom:1px dashed var(--rule);font:3.4cqw/1.3 var(--font-body);color:var(--ink)}
+.st .ft{font:2.6cqw/1.5 var(--font-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);border-top:1px solid var(--ink);padding-top:2.6cqw;display:flex;justify-content:space-between}
+
+.note{font:italic 12.5px/1.6 var(--font-body);color:var(--graphite);margin-top:10px;max-width:70ch}
+
+@media print{
+  body{background:#fff}
+  .kit{max-width:none;padding:0}
+  .sect-label{page-break-after:avoid}
+  .board{box-shadow:none;page-break-inside:avoid}
+}
+a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+</style>
+</head>
+<body>
+<div class="kit">
+
+  <header class="kit-head" data-od-id="kit-head">
+    <h1>The Other Margin <em>:</em> Promo Kit</h1>
+    <p>Vol. 01 / Issue 01 / One system, five surfaces / Dhaka</p>
+  </header>
+
+  <div class="sect-label" data-od-id="sys-label">Visual system</div>
+  <div class="board" data-od-id="board-system">
+    <div class="sys">
+      <div>
+        <div class="ink-legend">
+          <p style="font:600 0.68rem/1 var(--font-mono);letter-spacing:.2em;text-transform:uppercase">Two inks on newsprint</p>
+          <p style="font:italic 1.3cqw/1.6 var(--font-body);color:var(--ink-soft);margin-top:1.2cqw">Red ink marks what society says loudly. Graphite marks what it whispers: the margin notes. Everything sits on warm newsprint.</p>
+          <div class="swatches">
+            <div class="sw" style="background:#1c1712"><span>ink</span></div>
+            <div class="sw" style="background:#4c443a"><span>ink-soft</span></div>
+            <div class="sw" style="background:#b5321c"><span>red</span></div>
+            <div class="sw" style="background:#ebe4d2"><span>paper-deep</span></div>
+            <div class="sw" style="background:#f4efe3"><span>paper</span></div>
+          </div>
+          <div style="height:3.4cqw"></div>
+          <div class="type-spec">
+            <div class="row"><span class="k">Display</span><span style="font-family:var(--font-display);font-size:3.6cqw;letter-spacing:-.02em">Misogyny - the quiet kind</span></div>
+            <div class="row"><span class="k">Body</span><span style="font-family:var(--font-body);font-size:1.7cqw">Set in Source Serif 4 / 14.5-16.5px / ragged right</span></div>
+            <div class="row" style="border-bottom:none"><span class="k">Annotate</span><span style="font-family:var(--font-mono);font-size:1.35cqw;letter-spacing:.08em">IBM PLEX MONO - FOLIOS, TAGS, CAPTIONS</span></div>
+            <div class="row" style="border-bottom:none"><span class="k">Accent</span><span class="bn" style="font-size:1.9cqw;color:var(--red)">অন্য প্রান্ত - Bengali serif accents</span></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="ink-demo">
+          <div class="t">Ink semantics</div>
+          <p class="red-line">“Why was she outside so late?” - printed in red: the register we already recognize.</p>
+          <p class="pencil-line" style="margin-top:1cqw">“She is too ambitious.” - printed in graphite: the register we overlook.</p>
+        </div>
+        <div class="ink-demo" style="margin-top:2cqw">
+          <div class="t">Components</div>
+          <p style="font:italic 1.3cqw/1.7 var(--font-body)">Ask-yourself box (ink rule + deep paper) / margin notes (hyphen graphite) / plates (2px ink frame + duotone wash) / voice slots (dashed: reserved for real evidence).</p>
+        </div>
+        <p class="note" style="margin-top:2.4cqw">Rule of use: per surface, at most one dominant red device; graphite may roam the margins.</p>
+      </div>
+    </div>
+  </div>
+  <div class="board-meta"><span>System sheet / tokens &amp; semantics</span><span>reference - not for print</span></div>
+
+  <div class="sect-label" data-od-id="poster-label">Poster / A3 (297 x 420 mm)</div>
+  <div class="board poster" data-od-id="board-poster">
+    <div class="mast"><span>The Other Margin</span><span>Issue 01 / September 2026</span></div>
+    <div class="body">
+      <p class="kick">A student journal on gender &amp; power</p>
+      <h2>Misogyny -<br>what we <i>perceive</i><br>&amp; what we <i>overlook</i></h2>
+      <p class="deck">“Who decided what a good woman should be?” Five theories, two case studies, three columns and one poem: on the norms Bangladesh repeats until they look like nature.</p>
+      <figure>
+        <img src="other-margin-assets/05-street.png" alt="A Dhaka street in hard morning light with long shadows">
+        <div class="duo"></div>
+      </figure>
+      <p class="cap">Free on campus / while the print run lasts</p>
+      <div class="foot"><span>theothermargin: editorial desk</span><span>32 pages / newsprint</span></div>
+    </div>
+  </div>
+  <div class="board-meta"><span>Launch poster</span><span>export 3508 x 4961 px @300dpi</span></div>
+
+  <div class="sect-label" data-od-id="social-label">Social formats</div>
+  <div class="social-row">
+    <div>
+      <div class="board sq" data-od-id="board-square">
+        <span class="tag">What we overlook</span>
+        <h3>Ordinary is not the same as <i>harmless.</i></h3>
+        <div class="ft"><span>The Other Margin</span><span>01 / 32</span></div>
+      </div>
+      <div class="board-meta"><span>Square post</span><span>1080 x 1080</span></div>
+    </div>
+    <div>
+      <div class="board pt" data-od-id="board-portrait">
+        <div class="ph">
+          <img src="other-margin-assets/01-cover.png" alt="A woman in half-profile against a cream wall, red saree border">
+          <div class="duo"></div>
+          <span class="word" style="top:8%;left:8%">good daughter</span>
+          <span class="word" style="top:20%;right:8%">good wife</span>
+          <span class="word" style="bottom:14%;left:10%">good mother</span>
+          <span class="word" style="bottom:5%;right:9%">modest</span>
+        </div>
+        <div class="cap-block">
+          <h3>Who decided what a <i>good woman</i> should be?</h3>
+          <div class="ft"><span>The Other Margin</span><span>Issue 01</span></div>
+        </div>
+      </div>
+      <div class="board-meta"><span>Portrait post</span><span>1080 x 1350</span></div>
+    </div>
+    <div>
+      <div class="board st" data-od-id="board-story">
+        <div class="mast"><span>The Other Margin</span><span>1 / 3</span></div>
+        <h3>The wheel nobody <i>steers.</i></h3>
+        <ol>
+          <li>Socialization - a child learns the expectations</li>
+          <li>Repetition - family, media, peers repeat them</li>
+          <li>Normalization - they start feeling natural</li>
+          <li>Internalization - we apply them to ourselves</li>
+          <li>Policing - we judge those who break them</li>
+          <li>Reproduction - we pass them on</li>
+        </ol>
+        <div class="ft"><span>Read the full cycle</span><span>page 07</span></div>
+      </div>
+      <div class="board-meta"><span>Story</span><span>1080 x 1920</span></div>
+    </div>
+  </div>
+
+  <p class="note" style="margin-top:22px">All boards share the magazine's tokens: swap an image, keep the system. Replace plate photography with campaign shots only if they hold the same duotone contract.</p>
+
+</div>
+</body>
+</html>

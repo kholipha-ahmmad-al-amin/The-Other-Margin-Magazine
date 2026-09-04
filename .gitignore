@@ -1,0 +1,11 @@
+# Vercel
+.vercel
+
+# Node
+node_modules/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.swp
+*.bak
