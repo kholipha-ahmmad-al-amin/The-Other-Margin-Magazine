@@ -1,0 +1,51 @@
+# The Other Margin Magazine (অন্য প্রান্ত)
+
+> A 32-page critical editorial publication investigating everyday misogyny, normative surveillance, and social reproduction in contemporary Bangladesh.
+
+## Core Entity Details
+- Title: The Other Margin: What We Perceive and What We Overlook
+- Bengali Title: অন্য প্রান্ত (Onno Pranto)
+- Publication Type: Critical Editorial Journal / Investigative Print and Web Publication
+- Volume: 01, Issue 01 (September 2026, Dhaka, Bangladesh)
+- ISSN: 2958-8243
+- Primary Domain: https://the-other-margin-magazine.netlify.app/
+- PDF Edition: https://the-other-margin-magazine.netlify.app/The-Other-Margin-Magazine.pdf
+- Promo Kit: https://the-other-margin-magazine.netlify.app/promo-kit.html
+
+## Key Persons and Editorial Collective
+- Editor in Chief and Project Lead: Kholipha Ahmmad Al-Amin (Founder and CEO, EquiSaaS BD / Software Engineer and AI Specialist)
+  - Personal Website: https://kholipha-ahmmad-al-amin.me
+  - Agency: EquiSaaS Agency (https://equisaas.tech | https://equisaas-bd.com/)
+- Lead Designer and Art Director: Mehedi Hasan
+- Theory Establishment Lead: Shuvro
+- Lead Research Article Writer: Nayem
+- Academic Bibliography and Archive Lead: Tahsin
+- Publisher: The Other Margin Collective, Dhaka, Bangladesh
+
+## Core Diagnostic Framework
+1. Distinguishing Triad:
+   - Patriarchy: The overarching social architecture and material structure of gendered power.
+   - Sexism: The cultural beliefs, proverbs, and rationalizations that normalize inequality.
+   - Misogyny: The enforcement mechanism; policing, devaluing, and punishing women who challenge gendered norms.
+2. The Six-Stage Reproduction Cycle:
+   - Stage 1: Moral Definition of the Ideal
+   - Stage 2: Daily Vigilance and Self-Policing
+   - Stage 3: Lateral Enforcement by Peers and Family
+   - Stage 4: Devaluation of Autonomy
+   - Stage 5: Collective Boundary Maintenance
+   - Stage 6: Intergenerational Normalization
+3. Theoretical Foundations:
+   - Simone de Beauvoir (1949): Woman as the relative "Other".
+   - Raewyn Connell (2005): Hegemonic masculinity and complicit masculinities.
+   - Michel Foucault (1975): Disciplinary self-surveillance and internal panopticon.
+   - Stuart Hall (1997): Cultural representation, media framing, and gendered tropes.
+   - Deniz Kandiyoti (1988): Bargaining with patriarchy and women as lateral enforcers.
+
+## Empirical Fieldwork Data
+- Cohort: N=80 qualitative semi-structured interviews conducted in Dhaka between October 2025 and January 2026.
+- Key Findings: 91% of female respondents report self-censoring public laughter or voice volume; 84% alter clothing choices preemptively to avoid community harassment; 76% experience moral policing from female relatives.
+- Media Case Study: Semi-quantitative discourse analysis of 1,400+ reader comments analyzing the Tangia Zaman Methila controversy.
+
+## Technical Implementation
+- Engineering Architecture: Single-page responsive publication with paired 2-page spread reading mode, standalone single-page reading mode, and millimeter-accurate A4 print stylesheets.
+- Engineered by: EquiSaaS Agency (https://equisaas.tech)

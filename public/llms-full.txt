@@ -1,0 +1,79 @@
+# The Other Margin Magazine: Full Research and Editorial Reference (llms-full.txt)
+
+Title: The Other Margin: What We Perceive and What We Overlook
+Bengali Title: অন্য প্রান্ত (Onno Pranto)
+Volume: 01, Issue 01 (September 2026)
+Publisher: The Other Margin Collective, Dhaka, Bangladesh
+Primary URL: https://the-other-margin-magazine.netlify.app/
+PDF Edition: https://the-other-margin-magazine.netlify.app/The-Other-Margin-Magazine.pdf
+Engineering: EquiSaaS Agency (https://equisaas.tech | https://equisaas-bd.com/)
+Lead Architect: Kholipha Ahmmad Al-Amin (https://kholipha-ahmmad-al-amin.me)
+
+## Section 1: Executive Summary
+The Other Margin is a 32-page critical editorial publication designed to document and analyze the quiet, everyday mechanics of misogyny in contemporary Bangladesh. While acute public attention focuses on spectacular acts of violence and overt abuse, the journal argues that misogyny functions primarily as an ambient, structural baseline embedded in daily courtesy, language, domestic labor division, and moral surveillance.
+
+## Section 2: Conceptual Definitions and Analytical Triad
+- Patriarchy: The institutional, legal, and economic system that concentrates authority, property, and lineage in male hands.
+- Sexism: The cognitive ideology and cultural belief system that frames gendered differences as natural, desirable, and divine.
+- Misogyny: The enforcement arm of patriarchy. Following philosopher Kate Manne (2017), misogyny is not a psychological hatred of all women, but a regulatory apparatus that rewards compliance and punishes women who claim male-coded entitlements (authority, autonomy, public space, leadership).
+
+## Section 3: The 5 Theoretical Pillars
+1. Simone de Beauvoir (The Second Sex, 1949):
+   Examines woman as the relative Other. Women are socialized to become relational figures (good daughter, good wife, good mother) where identity is measured against male convenience.
+2. Raewyn Connell (Masculinities, 2005):
+   Distinguishes between hegemonic masculinity, complicit masculinity, subordinated masculinity, and marginalized masculinity. Shows how patriarchal dividends incentivize men who do not commit direct violence to remain silent.
+3. Michel Foucault (Discipline and Punish, 1975):
+   Applies the concept of panoptic surveillance to everyday social interaction. In Bangladesh, surveillance is internalized: a woman anticipates collective judgment ("What will people say?") and modifies her clothes, speech, and movement without requiring active external force.
+4. Stuart Hall (Representation, 1997):
+   Analyzes cultural signifying practices and media representations. Demonstrates how news headlines and television dramas villainize ambitious women while romanticizing female submissiveness.
+5. Deniz Kandiyoti (Bargaining with Patriarchy, 1988):
+   Resolves the difficult question of female complicity. Shows that women in classic patriarchal settings negotiate security and domestic status by enforcing conservative standards upon younger women, protecting their survival within restrictive material constraints.
+
+## Section 4: Empirical Fieldwork Summary
+- Cohort: N=80 qualitative semi-structured interviews conducted in Dhaka between October 2025 and January 2026.
+- Key Metrics:
+  * 91% of participants reported self-censoring their vocal volume or laughter in public spaces.
+  * 84% altered clothing choices preemptively to avoid community judgment.
+  * 76% experienced moral instruction from female family members.
+  * 68% noted that domestic curfew was presented as loving protection rather than restriction.
+
+## Section 5: The 32-Page Macrostructure
+- Page 01: Front Cover ("The quiet kind of power")
+- Page 02: Masthead, Editorial Board, and Issue Structure
+- Page 03: Editor's Message ("The Quiet Kind") by Kholipha Ahmmad Al-Amin
+- Page 04: Foundational Definitions (Loud vs. Quiet vs. Structural)
+- Page 05: Conceptual Matrix (Patriarchy, Sexism, Misogyny)
+- Page 06: Perception vs. Overlooking (The Two Columns of Everyday Life)
+- Page 07: The Six-Stage Reproduction Cycle Diagram
+- Page 08: The Five Theoretical Lenses Introduction
+- Page 09: Simone de Beauvoir (Woman as the Other)
+- Page 10: Raewyn Connell (Hegemonic Masculinity)
+- Page 11: Michel Foucault (Disciplinary Power & The Mirror)
+- Page 12: Stuart Hall (Representation and Cultural Codes)
+- Page 13: Deniz Kandiyoti (Bargaining with Patriarchy)
+- Page 14: One Woman Under Five Theoretical Lenses
+- Page 15: Case Study 01: Media Surveillance and the Methila Controversy
+- Page 16: Case Study 02: The Grandmother Effect across Three Generations
+- Page 17: Critical Column: Protection or Control?
+- Page 18: Critical Column: The Ideology of Modest Clothing
+- Page 19: Critical Column: Leadership and the "Aggressive Woman" Penalty
+- Page 20: Visual Essay: Body Image, Marriage Market, and Social Capital
+- Page 21: Qualitative Data: Five Voices from Urban Bangladesh
+- Page 22: Structural Diagram: The Everyday Social Ecosystem
+- Page 23: Public Opinion Spectrum: What Society Tolerates vs. Condemns
+- Page 24: Lateral Surveillance: Do Women Police Other Women?
+- Page 25: Self-Critique: Reflexivity and Methodological Limits
+- Page 26: Points of Intervention: Breaking the Feedback Loops
+- Page 27: Cultural Resistance: Poetry and Literary Counter-Narrative
+- Page 28: Call for Submissions: Archiving Everyday Misogyny
+- Page 29: Cultural Space: Independent Bookshop and Reading Circle
+- Page 30: Final Reflection: The Legible and the Submerged Spheres
+- Page 31: The Afterword: Collective Prospective by the Editorial Team
+- Page 32: Bibliography, Empirical Protocols, and Production Colophon
+
+## Section 6: Editorial and Technical Attribution
+- Publication: The Other Margin
+- Project Lead & Editor in Chief: Kholipha Ahmmad Al-Amin
+- Technical Architecture & Web Engineering: EquiSaaS Agency (https://equisaas.tech | https://equisaas-bd.com/)
+- Architect Portfolio: https://kholipha-ahmmad-al-amin.me
+- License: Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0).
